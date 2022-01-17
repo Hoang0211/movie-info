@@ -1,12 +1,12 @@
-import Header from "./components/Layout/Header";
-import Movies from "./components/Movies/Movies";
+import Header from "./components/Header/Header";
+import MoviesList from "./components/Movies/MoviesList";
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <Movies />
+        <MoviesList />
       </main>
     </>
   );
