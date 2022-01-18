@@ -44,9 +44,17 @@ function App() {
     }
   };
 
+  const submitSearchHandler = (text) => {
+    if (text) {
+      setIsSearching(true);
+      setSearchText(text);
+      setCurrentPage(1);
+    }
+  };
+
   return (
     <>
-      <Header />
+      <Header submitSearchHandler={submitSearchHandler} />
       <main>
         <MoviesList />
       </main>

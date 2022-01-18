@@ -1,11 +1,23 @@
+import { useRef } from "react";
+
 import classes from "./Header.module.css";
 
-const Header = () => {
+const Header = (props) => {
+  const searchTextRef = useRef("");
+
+  const submitSearchHandler = (event) => {
+    event.preventDefault();
+
+    props.submitSearchHandler(searchTextRef.current.value);
+
+    searchTextRef.current.value = "";
+  };
+
   return (
     <div className={classes.header}>
       <div className={classes.title}>Movie Info</div>
-      <form>
-        <input placeholder="Enter a movie name..." />
+      <form onSubmit={submitSearchHandler}>
+        <input placeholder="Enter a movie name..." ref={searchTextRef} />
       </form>
     </div>
   );
