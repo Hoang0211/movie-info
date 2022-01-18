@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 
 import useHttp from "./hooks/use-http";
 
-import Header from "./components/Header/Header";
+import Header from "./components/Layout/Header";
 import MoviesList from "./components/Movies/MoviesList";
+import Footer from "./components/Layout/Footer";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -18,7 +19,7 @@ function App() {
     let url;
     let queryPage = "&page=" + currentPage.toString();
 
-    const sendRequestFunc = async (url) => {
+    const sendRequestHandler = async (url) => {
       let data = await sendRequest(url);
       console.log(data);
       setMovies(data.results);
@@ -32,8 +33,16 @@ function App() {
       url = process.env.REACT_APP_DISCOVER_API + queryPage;
     }
 
-    sendRequestFunc(url);
-  }, [currentPage]);
+    sendRequestHandler(url);
+  }, [currentPage, isSearching, searchText, sendRequest]);
+
+  const navigatePageHandler = (increase) => {
+    if (increase === true) {
+      setCurrentPage((prev) => prev + 1);
+    } else {
+      setCurrentPage((prev) => prev - 1);
+    }
+  };
 
   return (
     <>
@@ -41,6 +50,11 @@ function App() {
       <main>
         <MoviesList />
       </main>
+      <Footer
+        currentPage={currentPage}
+        maxPage={maxPage}
+        navigatePageHandler={navigatePageHandler}
+      />
     </>
   );
 }
