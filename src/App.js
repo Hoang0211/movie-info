@@ -65,7 +65,7 @@ function App() {
         reloadHandler={reloadHandler}
       />
       <main>
-        <MoviesList />
+        <MoviesList isLoading={isLoading} error={error} movies={movies} />
       </main>
       <Footer
         currentPage={currentPage}
