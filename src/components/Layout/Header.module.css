@@ -16,6 +16,7 @@
 .title {
   font-size: 40px;
   font-weight: bold;
+  cursor: pointer;
 }
 input {
   padding: 5px 20px;

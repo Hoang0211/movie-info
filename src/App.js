@@ -52,9 +52,18 @@ function App() {
     }
   };
 
+  const reloadHandler = () => {
+    setIsSearching(false);
+    setSearchText("");
+    setCurrentPage(1);
+  };
+
   return (
     <>
-      <Header submitSearchHandler={submitSearchHandler} />
+      <Header
+        submitSearchHandler={submitSearchHandler}
+        reloadHandler={reloadHandler}
+      />
       <main>
         <MoviesList />
       </main>

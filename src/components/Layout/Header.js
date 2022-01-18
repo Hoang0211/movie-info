@@ -15,7 +15,9 @@ const Header = (props) => {
 
   return (
     <div className={classes.header}>
-      <div className={classes.title}>Movie Info</div>
+      <div className={classes.title} onClick={props.reloadHandler}>
+        Movie Info
+      </div>
       <form onSubmit={submitSearchHandler}>
         <input placeholder="Enter a movie name..." ref={searchTextRef} />
       </form>

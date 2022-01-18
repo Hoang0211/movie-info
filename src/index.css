@@ -9,3 +9,7 @@
 html {
   font-family: sans-serif, monospace;
 }
+
+body {
+  height: 200vh;
+}

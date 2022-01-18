@@ -15,6 +15,7 @@ const useHttp = () => {
       }
 
       const data = await response.json();
+      window.scrollTo({ top: 0, behavior: `smooth` });
       return data;
     } catch (err) {
       setError(err.message || "Something went wrong!");
