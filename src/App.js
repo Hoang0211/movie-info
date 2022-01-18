@@ -58,15 +58,27 @@ function App() {
     setCurrentPage(1);
   };
 
+  let content = <p>Found no movies!</p>;
+
+  if (movies.length > 0) {
+    content = <MoviesList movies={movies} />;
+  }
+
+  if (error) {
+    content = <p>{error}</p>;
+  }
+
+  if (isLoading) {
+    content = <p>Loading...</p>;
+  }
+
   return (
     <>
       <Header
         submitSearchHandler={submitSearchHandler}
         reloadHandler={reloadHandler}
       />
-      <main>
-        <MoviesList isLoading={isLoading} error={error} movies={movies} />
-      </main>
+      <main>{content}</main>
       <Footer
         currentPage={currentPage}
         maxPage={maxPage}

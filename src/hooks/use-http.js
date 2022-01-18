@@ -15,12 +15,13 @@ const useHttp = () => {
       }
 
       const data = await response.json();
-      window.scrollTo({ top: 0, behavior: `smooth` });
+      window.scrollTo({ top: 0 });
+      setIsLoading(false);
       return data;
     } catch (err) {
       setError(err.message || "Something went wrong!");
+      setIsLoading(false);
     }
-    setIsLoading(false);
   }, []);
 
   return {
