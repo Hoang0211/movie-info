@@ -21,3 +21,12 @@ main > p {
   font-size: 30px;
   font-weight: bold;
 }
+
+@media (max-width: 650px) {
+  main {
+    margin: 60px 0 40px 0;
+  }
+  main > p {
+    font-size: 20px;
+  }
+}

@@ -27,3 +27,20 @@ input {
 input:focus {
   outline: none;
 }
+
+@media (max-width: 650px) {
+  .header {
+    height: 60px;
+    padding: 0 15px;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  input {
+    width: 170px;
+    padding: 5px 10px;
+    font-size: 15px;
+  }
+}

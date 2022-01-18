@@ -2,7 +2,7 @@
   position: relative;
   width: 250px;
   height: 455px;
-  margin: 1rem;
+  margin: 15px;
   border-radius: 2px;
   box-shadow: 3px 3px 5px 160049;
   background-color: #160049;
@@ -15,6 +15,7 @@ img {
 .info {
   width: 100%;
   height: 80px;
+  padding: 15px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -22,7 +23,6 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
 }
 .title {
   margin-right: 5px;
@@ -45,12 +45,12 @@ img {
   background-color: #ff0000;
 }
 .overview {
+  padding: 15px;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   max-height: 80%;
-  padding: 1rem;
   background-color: #160049;
   overflow: auto;
   transform: translateX(100%);
@@ -61,4 +61,20 @@ img {
 }
 .movie-item:hover .overview {
   transform: translateX(0%);
+}
+
+@media (max-width: 650px) {
+  .movie-item {
+    height: 445px;
+  }
+  .info {
+    height: 70px;
+    padding: 10px;
+  }
+  .title {
+    font-size: 15px;
+  }
+  .score {
+    font-size: 15px;
+  }
 }
