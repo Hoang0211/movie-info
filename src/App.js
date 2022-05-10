@@ -1,23 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import useHttp from "./hooks/use-http";
+import useHttp from './hooks/use-http';
 
-import Header from "./components/Layout/Header";
-import MoviesList from "./components/Movies/MoviesList";
-import Footer from "./components/Layout/Footer";
+import Header from './components/Layout/Header';
+import MoviesList from './components/Movies/MoviesList';
+import Footer from './components/Layout/Footer';
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
 
   const { isLoading, error, sendRequest } = useHttp();
 
+  //test
+
   useEffect(() => {
     let url;
-    let queryPage = "&page=" + currentPage.toString();
+    let queryPage = '&page=' + currentPage.toString();
 
     const sendRequestHandler = async (url) => {
       let data = await sendRequest(url);
@@ -27,7 +29,7 @@ function App() {
     };
 
     if (isSearching) {
-      let queryText = "&query=" + searchText;
+      let queryText = '&query=' + searchText;
       url = process.env.REACT_APP_SEARCH_API + queryText + queryPage;
     } else {
       url = process.env.REACT_APP_DISCOVER_API + queryPage;
@@ -54,7 +56,7 @@ function App() {
 
   const reloadHandler = () => {
     setIsSearching(false);
-    setSearchText("");
+    setSearchText('');
     setCurrentPage(1);
   };
 
