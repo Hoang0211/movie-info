@@ -1,27 +1,25 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
-import classes from "./Header.module.css";
+import classes from './Header.module.css';
 
-const Header = (props) => {
-  const searchTextRef = useRef("");
+const Header = ({ submitSearch, reloadHandler }) => {
+  const searchTextRef = useRef('');
 
   const submitSearchHandler = (event) => {
     event.preventDefault();
-
-    props.submitSearchHandler(searchTextRef.current.value);
-
-    searchTextRef.current.value = "";
+    submitSearch(searchTextRef.current.value);
+    searchTextRef.current.value = '';
   };
 
   return (
-    <div className={classes.header}>
-      <div className={classes.title} onClick={props.reloadHandler}>
+    <header className={classes.header}>
+      <h1 className={classes.title} onClick={reloadHandler}>
         Movie Info
-      </div>
+      </h1>
       <form onSubmit={submitSearchHandler}>
-        <input placeholder="Enter a movie name..." ref={searchTextRef} />
+        <input placeholder='Enter a movie name...' ref={searchTextRef} />
       </form>
-    </div>
+    </header>
   );
 };
 export default Header;

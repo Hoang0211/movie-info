@@ -1,24 +1,24 @@
-import classes from "./Footer.module.css";
+import classes from './Footer.module.css';
 
-const Footer = (props) => {
+const Footer = ({ currentPage, maxPage, navigatePageHandler }) => {
   return (
-    <div className={classes["footer"]}>
+    <footer className={classes['footer']}>
       <button
-        onClick={() => props.navigatePageHandler(false)}
-        disabled={props.currentPage === 1}
+        onClick={() => navigatePageHandler(false)}
+        disabled={currentPage === 1}
       >
         -
       </button>
-      <div className={classes["current-page"]}>
-        {props.currentPage} / {props.maxPage}
-      </div>
+      <span className={classes['current-page']}>
+        {currentPage} / {maxPage}
+      </span>
       <button
-        onClick={() => props.navigatePageHandler(true)}
-        disabled={props.currentPage === props.maxPage}
+        onClick={() => navigatePageHandler(true)}
+        disabled={currentPage === maxPage}
       >
         +
       </button>
-    </div>
+    </footer>
   );
 };
 

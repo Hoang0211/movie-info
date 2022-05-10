@@ -1,12 +1,11 @@
-import MovieItem from "./MovieItem";
+import MovieItem from './MovieItem';
+import classes from './MoviesList.module.css';
 
-import classes from "./MoviesList.module.css";
-
-const MoviesList = (props) => {
+const MoviesList = ({ movies }) => {
   return (
-    <div className={classes["movies-list"]}>
-      {props.movies.length > 0 &&
-        props.movies.map((movie, index) => (
+    <main className={classes['movies-list']}>
+      {movies.length > 0 &&
+        movies.map((movie, index) => (
           <MovieItem
             key={index}
             title={movie.title}
@@ -15,7 +14,7 @@ const MoviesList = (props) => {
             score={movie.vote_average}
           />
         ))}
-    </div>
+    </main>
   );
 };
 

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 import useHttp from './hooks/use-http';
-
 import Header from './components/Layout/Header';
 import MoviesList from './components/Movies/MoviesList';
 import Footer from './components/Layout/Footer';
@@ -15,15 +14,12 @@ function App() {
 
   const { isLoading, error, sendRequest } = useHttp();
 
-  //test
-
   useEffect(() => {
     let url;
     let queryPage = '&page=' + currentPage.toString();
 
     const sendRequestHandler = async (url) => {
       let data = await sendRequest(url);
-      console.log(data);
       setMovies(data.results);
       setMaxPage(data.total_pages);
     };
@@ -46,7 +42,7 @@ function App() {
     }
   };
 
-  const submitSearchHandler = (text) => {
+  const submitSearch = (text) => {
     if (text) {
       setIsSearching(true);
       setSearchText(text);
@@ -76,11 +72,8 @@ function App() {
 
   return (
     <>
-      <Header
-        submitSearchHandler={submitSearchHandler}
-        reloadHandler={reloadHandler}
-      />
-      <main>{content}</main>
+      <Header submitSearch={submitSearch} reloadHandler={reloadHandler} />
+      {content}
       <Footer
         currentPage={currentPage}
         maxPage={maxPage}

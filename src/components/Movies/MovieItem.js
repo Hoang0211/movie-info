@@ -1,36 +1,31 @@
-import classes from "./MovieItem.module.css";
+import classes from './MovieItem.module.css';
 
-const MovieItem = (props) => {
+const MovieItem = ({ title, overview, img, score }) => {
   const changeScoreColor = (score) => {
     if (score >= 8) {
-      return "green";
+      return 'green';
     } else if (score >= 6) {
-      return "orange";
+      return 'orange';
     } else {
-      return "red";
+      return 'red';
     }
   };
 
   return (
-    <div className={classes["movie-item"]}>
-      <img
-        src={process.env.REACT_APP_IMG_API + props.img}
-        alt={props.title}
-      ></img>
-      <div className={classes["info"]}>
-        <div className={classes["title"]}>{props.title}</div>
+    <div className={classes['movie-item']}>
+      <img src={process.env.REACT_APP_IMG_API + img} alt={title}></img>
+      <div className={classes['info']}>
+        <p className={classes['title']}>{title}</p>
         <span
-          className={`${classes["score"]} ${
-            classes[changeScoreColor(props.score)]
-          }`}
+          className={`${classes['score']} ${classes[changeScoreColor(score)]}`}
         >
-          {props.score.toFixed(1)}
+          {score.toFixed(1)}
         </span>
       </div>
 
-      <div className={classes["overview"]}>
-        <h1>Overview</h1>
-        <p>{props.overview}</p>
+      <div className={classes['overview']}>
+        <h2>Overview</h2>
+        <p>{overview}</p>
       </div>
     </div>
   );
