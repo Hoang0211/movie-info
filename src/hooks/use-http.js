@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback } from 'react';
 
 const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +11,7 @@ const useHttp = () => {
       const response = await fetch(url);
 
       if (!response.ok) {
-        throw new Error("Failed to get data!");
+        throw new Error('Failed to get data!');
       }
 
       const data = await response.json();
@@ -19,7 +19,7 @@ const useHttp = () => {
       setIsLoading(false);
       return data;
     } catch (err) {
-      setError(err.message || "Something went wrong!");
+      setError(err.message || 'Something went wrong!');
       setIsLoading(false);
     }
   }, []);
