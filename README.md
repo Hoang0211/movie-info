@@ -21,7 +21,7 @@ A front-end application built from scratch as a hobby project. The application s
 ### Requirements
 
 - Simple to use interface.
-- Navigate between pages feature.
+- Navigate between pages.
 - Search for movie by name.
 - See movies info by mouse over.
 - Responsive application layout.
