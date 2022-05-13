@@ -16,7 +16,7 @@ Movie info app created as a personal project.
 
 ## Application Features
 
-A front-end application built from scratch as a hobby project. The application serves as a movie info web that allows users to find information about latest movies. This project gets data from TheMovieDB API and is deployed using GitHub Pages.
+A front-end application built from scratch. The application serves as a movie info web that allows users to find information about latest movies.
 
 ### Requirements
 
@@ -33,6 +33,8 @@ A front-end application built from scratch as a hobby project. The application s
 ---
 
 ## Technologies Used
+
+This project gets data from TheMovieDB API and is deployed using GitHub Pages.
 
 - React.js
 - CSS Modules
