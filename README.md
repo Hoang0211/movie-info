@@ -16,15 +16,15 @@ Movie info app created as a personal project.
 
 ## Application Features
 
-A movie info web application that allow users to find information about latest movies.
+A front-end application built from scratch as a hobby project. The application serves as a movie info web that allows users to find information about latest movies. This project gets data from TheMovieDB API and is deployed using GitHub Pages.
 
 ### Requirements
 
 - Simple to use interface.
 - Navigate between pages feature.
-- Search movie name feature.
-- See movies info by mouse over feature.
-- Application layout is responsive.
+- Search for movie by name.
+- See movies info by mouse over.
+- Responsive application layout.
 
   ![page load](./readme-assets/responsive-layout.gif)
 
@@ -34,10 +34,8 @@ A movie info web application that allow users to find information about latest m
 
 ## Technologies Used
 
-- React.js (Hooks)
+- React.js
 - CSS Modules
-- TheMovieDB API
-- GitHub Pages
 
 [Back To Top](#Table-Of-Contents)
 
