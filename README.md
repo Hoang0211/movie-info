@@ -21,10 +21,10 @@ A front-end application built from scratch. The application serves as a movie in
 ### Requirements
 
 - Simple to use interface.
-- Navigate between pages.
-- Search for movie by name.
-- See movies info by mouse over.
-- Responsive application layout.
+- Page navigation.
+- Movie name search.
+- Movie info displayed by mouse over.
+- Responsive layout.
 
   ![page load](./readme-assets/responsive-layout.gif)
 
